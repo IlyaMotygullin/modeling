@@ -3,6 +3,7 @@ package com.example.modeling.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.Fetch;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +25,14 @@ public class Role {
     @Column(name = "name_role")
     String nameRole;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     List<User> userList = new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return "Role{" +
+                "id=" + id +
+                ", nameRole='" + nameRole + '\'' +
+                '}';
+    }
 }

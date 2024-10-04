@@ -1,6 +1,8 @@
 package com.example.modeling.controller;
 
+import com.example.modeling.entity.Role;
 import com.example.modeling.entity.User;
+import com.example.modeling.service.role_service.RoleService;
 import com.example.modeling.service.user_service.UserService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
@@ -20,6 +22,8 @@ public class MainController {
 
     final UserService userService;
 
+    final RoleService roleService;
+
     @GetMapping("/register")
     public String createUser(Model model) {
         model.addAttribute("user", user);
@@ -28,7 +32,20 @@ public class MainController {
 
     @PostMapping("/register_user")
     public String createUser(@ModelAttribute User user) {
-        userService.createUser(user);
+        Role roleUser = roleService.findRoleByName("USER");
+
+        userService.createUser(user, roleUser);
+        roleService.updateRole(roleUser, user);
         return "redirect:/";
+    }
+
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
+
+    @GetMapping("/user")
+    public String userPage() {
+        return "user";
     }
 }

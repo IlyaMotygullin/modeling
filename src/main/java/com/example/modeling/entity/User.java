@@ -27,11 +27,20 @@ public class User {
     @Column(name = "password_user")
     String password;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_role",
             joinColumns = @JoinColumn(name = "id_user"),
             inverseJoinColumns = @JoinColumn(name = "id_role")
     )
     List<Role> roleList = new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", emailUser='" + emailUser + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }

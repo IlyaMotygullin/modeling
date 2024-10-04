@@ -29,7 +29,9 @@ public class SecurityConfiguration {
                         .requestMatchers("/user").authenticated()
                         .requestMatchers("/admin").hasRole("ADMIN")
                         .anyRequest().permitAll())
-                .formLogin(form -> form.loginPage("/login").permitAll())
+                .formLogin(form -> form.loginPage("/login")
+                        .defaultSuccessUrl("/user", true)
+                        .permitAll())
                 .build();
     }
 

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>403 - Доступ запрещён</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff4e50, #f9d423);
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 100px;
+            margin: 0;
+            line-height: 1;
+            letter-spacing: 5px;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 20px;
+            margin: 20px 0;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        a {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: white;
+            color: #ff4e50;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #f9d423;
+            color: #ff4e50;
+        }
+
+        .error-code {
+            font-size: 150px;
+            font-weight: bold;
+        }
+
+        .back-home {
+            margin-top: 30px;
+        }
+
+        .lock-icon {
+            font-size: 60px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="error-code">403</div>
+    <h1>Доступ запрещён</h1>
+    <div class="lock-icon">🔒</div>
+    <h2>У вас нет прав для просмотра этой страницы</h2>
+    <p>Похоже, вы пытаетесь попасть на страницу, доступ к которой ограничен. Если вы считаете, что это ошибка, свяжитесь с администратором.</p>
+    <div class="back-home">
+        <a href="/">Вернуться на главную</a>
+    </div>
+</div>
+</body>
+</html>
